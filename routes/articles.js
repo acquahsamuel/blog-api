@@ -1,4 +1,8 @@
 const express = require("express");
+const Article = require("../models/Article");
+const { protect, authorize } = require("../middleware/auth");
+const advancedResults = require("../middleware/advancedResults");
+
 const {
     getArticles,
     getArticle,
@@ -8,13 +12,11 @@ const {
 } = require("../controllers/articles");
 const router = express.Router();
 
-const Article = require("../models/Article");
+
 // const router = express.Router({
 //     mergeParams: true
 // });
 
-const advancedResults = require("../middleware/advancedResults");
-const { protect, authorize } = require("../middleware/auth");
 
 router
     .route("/")
