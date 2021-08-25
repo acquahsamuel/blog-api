@@ -10,7 +10,7 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   // Loop over removeFields and delete them from reqQuery
   removeFields.forEach(param => delete reqQuery[param]);
 
-  
+
   // Create query string
   let queryStr = JSON.stringify(reqQuery);
 
@@ -33,6 +33,7 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   } else {
     query = query.sort('-createdAt');
   }
+
 
   // Pagination
   const page = parseInt(req.query.page, 10) || 1;
