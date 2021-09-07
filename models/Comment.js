@@ -5,11 +5,11 @@ const CommentSchema = new Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
-    required: true
+    required: true,
   },
   body: {
     type: String,
-    required: true
+    required: true,
   },
   approveComment: {
     type: Boolean,
@@ -18,12 +18,12 @@ const CommentSchema = new Schema({
 
   commentCount: {
     type: Number,
-    default: 0
+    default: 0,
   },
   date: {
     type: Date,
     default: Date.now(),
-  }
+  },
 });
 
 module.exports = mongoose.model("Comment", CommentSchema);
