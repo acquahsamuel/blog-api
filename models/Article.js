@@ -33,7 +33,7 @@ const ArticleSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ["private", "public"],
-    default: "public",
+    default: "private",
   },
 
   allowComments: {
