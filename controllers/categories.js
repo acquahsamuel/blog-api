@@ -8,7 +8,7 @@ const asyncHandler = require('../middleware/async');
 // @access    Private/Admin
 exports.getCategories = asyncHandler(async (req, res, next) => {
   // res.status(200).json(res.advancedResults);
-  const category = await Category.find({});
+  const category = await Category.find();
   res.status(200).json({
     success: true,
     data: category
@@ -27,6 +27,7 @@ exports.createCategory = asyncHandler(async (req, res, next) => {
     data: category
   });
 });
+
 
 
 
